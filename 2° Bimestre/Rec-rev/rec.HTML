@@ -1,0 +1,127 @@
+<body>
+    <div class="container">
+        <h1>Descubra seu Signo</h1>
+
+        <div class="form-group">
+            <label>Nome</label>
+            <input type="text" id="inputNome" value="João Silva">
+        </div>
+
+        <div class="form-group">
+            <label>Dia de nascimento</label>
+            <input type="number" id="inputDia" min="1" max="31" value="15">
+        </div>
+
+        <div class="form-group">
+            <label>Mês de nascimento</label>
+
+            <select id="inputMes">
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
+        </div>
+
+        <div class="button-group">
+            <button onclick="enviarParaServidor()">
+                Descobrir Signo
+            </button>
+        </div>
+
+        <div id="resultadoContainer"></div>
+    </div>
+
+    <script>
+
+        async function enviarParaServidor() {
+
+            const enderecoServidor = "localhost";
+            const portaServidor = "3000";
+
+            const nome = document.getElementById("inputNome").value.trim();
+            const dia = Number(document.getElementById("inputDia").value);
+            const mes = Number(document.getElementById("inputMes").value);
+
+            if (nome == "") {
+                alert("Digite o nome.");
+                return;
+            }
+
+            const meuPacoteDeDados = {
+                nome: nome,
+                dia: dia,
+                mes: mes
+            };
+
+            try {
+
+                const response = await fetch(`http://${enderecoServidor}:${portaServidor}/signo`, {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify(meuPacoteDeDados)
+
+                });
+
+                const dados = await response.json();
+
+                exibirResultado(dados);
+
+            } catch (erro) {
+
+                exibirErro();
+
+            }
+
+        }
+
+        function exibirResultado(dados) {
+
+            document.getElementById("resultadoContainer").innerHTML = `
+                <div class="resultado">
+                    <p>Nome: ${dados.nome}<br>
+                    Nascimento: ${dados.dia}/${dados.mes}<br>
+                    Signo: ${dados.signo}</p>
+                </div>
+            `;
+
+        }
+
+        function exibirErro() {
+
+            document.getElementById("resultadoContainer").innerHTML = `
+                <div class="erro">
+                    <p>Erro! Não foi possível conectar ao servidor.<br>
+                    Verifique se o server.js está em execução.</p>
+                </div>
+            `;
+
+        }
+
+        document.addEventListener("keypress", function (e) {
+
+            if (e.key == "Enter") {
+
+                enviarParaServidor();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>

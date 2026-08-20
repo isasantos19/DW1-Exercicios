@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Tangerinas Felizes</title>
+    <link rel="stylesheet" href="style.CSS">
+</head>
+
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header>
+        <h1>🍊 Tangerinas Felizes 🍊</h1>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+
+        <!-- Apresentação do sistema ao usuário -->
+        <section>
+
+            <h2>Bem-vindo!</h2>
+
+            <img src="mercado_tangirinas.avif" alt="Mercado">
+
+            <p>
+                Bem-vindo ao Mercado Tangerinas Felizes!
+                Neste sistema você poderá consultar os
+                produtos cadastrados, visualizar as
+                categorias existentes e também consultar
+                os produtos separados por categoria.
+            </p>
+
+        </section>
+
+        <!-- Consultas com as rotas GET -->
+        <section>
+
+            <h2>Consultas</h2>
+
+            <!-- Consulta todos os produtos -->
+            <input type="button" value="Ver Produtos" onclick="listarprodutos()">
+            <br><br>
+
+            <!-- Consulta todas as categorias -->
+            <input type="button" value="Ver Categorias" onclick="listarcategorias()">
+            <br><br>
+
+            <!-- Consulta os produtos com suas categorias -->
+            <input type="button" value="Ver Produtos por Categoria" onclick="listarprodutosecategorias()">
+
+        </section>
+
+        <!-- Lugar em que será exibido os resultados das consultas GET -->
+        <section>
+
+            <h2>Resultado da Consulta</h2>
+            <div id="resp1">
+                Clique em um dos botões para realizar uma consulta.
+            </div>
+
+        </section>
+
+        <!-- Pesquisa de um produto pelo método POST -->
+        <section>
+
+            <h2>Pesquisar Produto</h2>
+            <p>
+                Busque informações sobre algum produto !!
+            </p>
+
+            <input type="text" id="nomeProduto" placeholder="Realize uma busca">
+            <br><br>
+            <input type="button" value="Pesquisar" onclick="pesquisarProduto()">
+
+        </section>
+
+        <!-- Lugar em que será exibido o resultado da consulta do produto pelo método POST -->
+        <section>
+
+            <h2>Resultado da Pesquisa</h2>
+            <div id="resp2">
+                Digite e clique no botão para pesquisar por algum produto.
+            </div>
+
+        </section>
+
+        <!-- Pesquisa de produtos por categoria e faixa de preço -->
+        <section>
+
+            <h2>Pesquisar por Categoria</h2>
+
+            <!-- Menu suspenso com as categorias -->
+            <label for="categoria">Categoria:</label>
+            <br>
+            <select id="categoria">
+                <option value="1">Bebidas</option>
+                <option value="2">Frutas</option>
+                <option value="3">Higiene</option>
+                <option value="4">Limpeza</option>
+                <option value="5">Doces</option>
+            </select>
+            <br><br>
+
+            <!-- Menu suspenso com as faixas de preços -->
+            <label for="preco">Faixa de preço:</label>
+            <br>
+            <select id="preco">
+                <option value="1">Até R$10,00</option>
+                <option value="2">Entre R$10,00 e R$20,00</option>
+                <option value="3">Acima de R$20,00</option>
+            </select>
+            <br><br>
+            <input type="button" value="Pesquisar" onclick="pesquisarCategoria()">
+
+        </section>
+
+        <!-- Lugar em que será exibido o resultado da consulta da faixa de preço dentro das categorias -->
+        <section>
+
+            <h2>Resultado da Consulta</h2>
+            <div id="resp3">
+                Selecione e clique no botão para exibir sua resposta.
+            </div>
+
+        </section>
+
+        <section>
+            <img src="tangerinas_mercado.jpg" alt="Frutas">
+        </section>
+
+    </main>
+
+    <!-- Rodapé com o meu nome -->
+    <footer>
+        <p>Isabela Maria Ferreira dos Santos</p>
+    </footer>
+
+    <script src="script.JS"></script>
+
+</body>
+</html>
