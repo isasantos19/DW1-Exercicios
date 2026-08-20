@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Cadastro de produtos</h1>
+    </header>
+    <main>
+        <form onsubmit="return validar()" action="destino.HTML" method="get">
+        <section class="caixa">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <br>
+        <label for="preco">Preço:</label>
+        <input type="number" id="preco" name="preco" step="0.01">
+        <br>
+        <label for="categoria">Categoria:</label>
+        <select id="categoria" name="categoria">
+            <option value="">Escolha uma opção!</option>
+            <option value="enlatado">Enlatado</option>
+            <option value="perecivel">Perecível</option>
+            <option value="processados">Processados</option>
+        </select>
+        <br>
+        <button type="submit">Cadastrar</button>
+        </section>
+
+        <script>
+            function validar(){
+            let nome=document.getElementById("nome").value;
+            let preco=parseFloat(document.getElementById("preco").value);
+            let categoria=document.getElementById("categoria").value;
+
+            if(nome == "" || nome == !isNaN("nome")){
+                alert("Preencha todos os campos corretamente!!")
+                return false
+            }else if(isNaN(preco) || preco <0){
+                alert("Preencha todos os campos corretamente!!")
+                return false
+            }else if(categoria == ""){
+                alert("Escolha uma opção válida!!")
+                return false
+            }else{
+                return true
+            }
+
+        }
+        </script>
+
+        </form>
+    </main>
+</body>
+</html>

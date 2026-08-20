@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dados Recebidos</title>
+</head>
+<body>
+
+    <h1>Dados Recebidos com Sucesso!</h1>
+    
+    <p><strong>Nome informado:</strong> <span id="resultadoNome"></span></p>
+    <p><strong>CPF informado:</strong> <span id="resultadoCpf"></span></p>
+
+    <script>
+        // 1. Pegamos tudo que vem depois do "?" na URL da página
+        var parametrosDaUrl = new URLSearchParams(window.location.search);
+
+        // 2. Extraímos os valores usando os mesmos nomes ('name') que colocamos no formulário
+        var nomeRecebido = parametrosDaUrl.get('nome');
+        var cpfRecebido = parametrosDaUrl.get('cpf');
+
+        // 3. Colocamos esses valores nos espaços (<span>) que criamos no HTML acima
+        document.getElementById('resultadoNome').textContent = nomeRecebido;
+        document.getElementById('resultadoCpf').textContent = cpfRecebido;
+    </script>
+
+    <br>
+    <a href="index.html">Voltar para o formulário</a>
+
+</body>
+</html>

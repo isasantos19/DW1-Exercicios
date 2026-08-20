@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #17151f;
+    color: #eeeeee;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+/* Título */
+
+h1 {
+    text-align: center;
+    color: #f4c95d;
+    font-size: 36px;
+    margin-bottom: 35px;
+}
+
+/* Área dos dados */
+
+label {
+    display: block;
+    color: #c7c3d1;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 13px;
+
+    background: #24212e;
+    color: white;
+
+    border: 2px solid #363242;
+    border-radius: 10px;
+
+    font-size: 15px;
+    outline: none;
+
+    transition: 0.2s;
+}
+
+input[type="text"]:focus {
+    border-color: #f4c95d;
+}
+
+/* Organização dos campos */
+
+#inputId {
+    width: 180px;
+}
+
+/* Botões */
+
+input[type="button"] {
+    padding: 11px 18px;
+
+    border: none;
+    border-radius: 9px;
+
+    font-weight: bold;
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+input[type="button"]:hover {
+    transform: scale(1.04);
+}
+
+/* Botão procurar */
+
+#btProcure {
+    background: #f4c95d;
+    color: #17151f;
+}
+
+/* Inserir */
+
+#btInserir {
+    background: #4caf7a;
+    color: white;
+}
+
+/* Alterar */
+
+#btAlterar {
+    background: #e39b45;
+    color: white;
+}
+
+/* Excluir */
+
+#btExcluir {
+    background: #d9534f;
+    color: white;
+}
+
+/* Salvar */
+
+#btSalvar {
+    background: #4caf7a;
+    color: white;
+}
+
+/* Cancelar */
+
+#btCancelar {
+    background: #514b60;
+    color: white;
+}
+
+/* Mensagem */
+
+#divAviso {
+    background: #24212e !important;
+
+    border: 1px solid #363242;
+    border-radius: 10px;
+
+    padding: 16px;
+    min-height: 50px;
+
+    color: #f4c95d;
+
+    margin-top: 25px;
+}
+
+/* Lista de filmes */
+
+#outputSaida {
+    background: #211e2a !important;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    margin-top: 25px;
+
+    border: 1px solid #363242;
+
+    min-height: 120px;
+
+    color: #eeeeee;
+
+    line-height: 2;
+}
+
+/* Botões de arquivo */
+
+#btPersisitir,
+#btRecuperar {
+    padding: 13px 22px;
+
+    margin-top: 25px;
+
+    border-radius: 10px;
+}
+
+/* Persistir */
+
+#btPersisitir {
+    background: #9b59b6;
+    color: white;
+}
+
+/* Recuperar */
+
+#btRecuperar {
+    background: #3498db;
+    color: white;
+}
+
+/* Separação visual dos botões */
+
+#btPersisitir {
+    margin-left: 0;
+}

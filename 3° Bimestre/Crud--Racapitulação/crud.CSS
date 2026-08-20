@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f4f7;
+    min-height: 100vh;
+    padding: 40px;
+    color: #333;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2937;
+}
+
+/* Área principal */
+body {
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Labels */
+label {
+    display: inline-block;
+    width: 80px;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #374151;
+}
+
+/* Inputs */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    outline: none;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+input[type="text"]:focus {
+    border-color: #2563eb;
+}
+
+/* Botões */
+input[type="button"] {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 4px;
+    transition: 0.2s;
+}
+
+input[type="button"]:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+/* Botões principais */
+#btProcure {
+    background-color: #2563eb;
+    color: white;
+}
+
+#btInserir {
+    background-color: #16a34a;
+    color: white;
+}
+
+#btAlterar {
+    background-color: #f59e0b;
+    color: white;
+}
+
+#btExcluir {
+    background-color: #dc2626;
+    color: white;
+}
+
+#btSalvar {
+    background-color: #16a34a;
+    color: white;
+}
+
+#btCancelar {
+    background-color: #6b7280;
+    color: white;
+}
+
+/* Aviso */
+#divAviso {
+    background-color: white !important;
+    border-left: 5px solid #2563eb;
+    padding: 15px;
+    border-radius: 6px;
+    min-height: 45px;
+    margin-top: 15px;
+}
+
+/* Área de saída */
+#outputSaida {
+    background-color: white !important;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    min-height: 80px;
+    border: 1px solid #e5e7eb;
+    line-height: 1.8;
+}
+
+/* Persistir e Recuperar */
+#btPersisitir {
+    background-color: #7c3aed;
+    color: white;
+    margin-top: 20px;
+}
+
+#btRecuperar {
+    background-color: #0891b2;
+    color: white;
+    margin-top: 20px;
+}

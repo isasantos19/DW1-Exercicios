@@ -1,0 +1,26 @@
+<p id="resp"></p>
+  <table border="1">
+                <tr>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Categoria</th>
+                </tr>
+                <tr>
+                    <td id="respnome"></td>
+                    <td id="resppreco"></td>
+                    <td id="respcategoria"></td>
+                </tr>
+            </table>
+
+<script>
+    let dados = new URLSearchParams(window.location.search);
+
+    let nome = dados.get("nome");
+    let preco = dados.get("preco");
+    let categoria = dados.get("categoria");
+
+    document.getElementById("resp").innerHTML = "Nome:"+nome+"<br>"+"Preço:"+preco+"<br>"+"Categoria:"+categoria;
+    document.getElementById("respnome").innerHTML = nome;
+    document.getElementById("resppreco").innerHTML = preco;
+    document.getElementById("respcategoria").innerHTML = categoria;
+</script>

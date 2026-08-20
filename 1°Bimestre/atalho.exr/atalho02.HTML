@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Simples</title>
+</head>
+<body>
+
+    <h1>Cadastro de Usuário</h1>
+
+    <form action="destino.html" method="GET" onsubmit="return validarFormulario()">
+        
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br><br> <label for="cpf">CPF (apenas números):</label>
+        <input type="text" id="cpf" name="cpf" required>
+        <br><br>
+        <button type="submit">Enviar Dados</button>        
+    </form>
+
+    <script>
+        // Função didática para validar se o CPF tem algo digitado antes de enviar
+        function validarFormulario() {
+            // Pega o valor que foi digitado no campo CPF
+            var cpfDigitado = document.getElementById('cpf').value;
+
+            // Uma validação simples: se tiver menos de 11 caracteres, avisa e bloqueia o envio
+            if (cpfDigitado.length < 11) {
+                alert("Por favor, digite um CPF válido com pelo menos 11 números.");
+                return false; // O 'false' impede que o formulário vá para a outra página
+            }
+
+            return true; // O 'true' libera o envio para a página "destino.html"
+        }
+    </script>
+
+</body>
+</html>
